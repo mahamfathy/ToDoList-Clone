@@ -1,2 +1,27 @@
 <button mat-raised-button color="warn">Warn</button>
 <button mat-stroked-button color="warn">Warn</button>
+<!-- <p-slider [(ngModel)]="value"></p-slider> -->
+<!-- <form [formGroup]="formGroup">
+  <p-slider formControlName="value"></p-slider>
+</form> -->
+<div class="flex flex-wrap gap-3">
+  <div class="flex align-items-center">
+      <p-radioButton name="pizza" value="Cheese" [(ngModel)]="ingredient" inputId="ingredient1"></p-radioButton>
+      <label for="ingredient1" class="ml-2">Cheese</label>
+  </div>
+  
+  <div class="flex align-items-center">
+      <p-radioButton name="pizza" value="Mushroom" [(ngModel)]="ingredient" inputId="ingredient2"></p-radioButton>
+      <label for="ingredient2" class="ml-2">Mushroom</label>
+  </div>
+  
+  <div class="flex align-items-center">
+      <p-radioButton name="pizza" value="Pepper" [(ngModel)]="ingredient" inputId="ingredient3"></p-radioButton>
+      <label for="ingredient3" class="ml-2">Pepper</label>
+  </div>
+
+  <div class="flex align-items-center">
+      <p-radioButton name="pizza" value="Onion" [(ngModel)]="ingredient" inputId="ingredient4"></p-radioButton>
+      <label for="ingredient4" class="ml-2">Onion</label>
+  </div>
+</div>
