@@ -25,7 +25,12 @@ export class ToDoComponent {
   }
   removeTask(index: number) {
     this.tasks.splice(index, 1);
-      this.isAvailable = this.tasks.length>0;
+    this.isAvailable = this.tasks.length > 0;
   }
-  editTask() {}
+  editTask(index: number) {
+    let updateTask = prompt('Edit Task', this.tasks[index]);
+    if (updateTask !== null) {
+      this.tasks[index] = updateTask.trim();
+    }
+  }
 }
