@@ -15,14 +15,17 @@ export class ToDoComponent {
 
   tasks: string[] = [];
   newTask: string = '';
-  isAvailable:boolean=false
+  isAvailable: boolean = false;
   addTask() {
     if (this.newTask !== null && this.newTask !== '') {
       this.tasks.push(this.newTask.trim());
       this.newTask = '';
-      this.isAvailable=true
+      this.isAvailable = true;
     }
   }
-  removeTask() {}
+  removeTask(index: number) {
+    this.tasks.splice(index, 1);
+      this.isAvailable = this.tasks.length>0;
+  }
   editTask() {}
 }
