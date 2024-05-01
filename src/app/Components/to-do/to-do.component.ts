@@ -27,10 +27,23 @@ export class ToDoComponent {
     this.tasks.splice(index, 1);
     this.isAvailable = this.tasks.length > 0;
   }
-  editTask(index: number) {
-    let updateTask = prompt('Edit Task', this.tasks[index]);
-    if (updateTask !== null) {
-      this.tasks[index] = updateTask.trim();
+  // 1- promt way
+  // editTask(index: number) {
+  //   let updateTask = prompt('Edit Task', this.tasks[index]);
+  //   if (updateTask !== null) {
+  //     this.tasks[index] = updateTask.trim();
+  //   }
+  // }
+
+  // 2- field value way
+  editTask(index: number, newTaskEdit: string): string | void {
+    // const trimedTask = newTaskEdit.trim();
+    if (newTaskEdit !== '') {
+      this.tasks[index] = newTaskEdit.trim();
+    } else {
+      newTaskEdit = this.tasks[index];
+      return (this.newTask = newTaskEdit);
     }
+    this.newTask=""
   }
 }
